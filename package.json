@@ -1,0 +1,9 @@
+{
+  "name": "user-auth-system",
+  "version": "0.1.0",
+  "author": "CodeSagePath",
+  "private": true,
+  "dependencies": {
+    "react-router-dom": "^7.18.1"
+  }
+}
