@@ -10,3 +10,13 @@ li {
   display: inline;
   margin-right: 10px;
 }
+
+.form-group {
+  margin-bottom: 10px;
+}
+
+.error {
+  color: red;
+  font-weight: 500;
+  font-family: cursive;
+}
