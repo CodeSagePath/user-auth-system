@@ -1,11 +1,18 @@
 import logo from './logo.svg';
 import './App.css';
 import { Link, Routes, Route } from "react-router-dom";
+
 import Login from './components/Login';
 import Dashboard from './components/Dashboard';
 import Profile from './components/Profile';
 
+import { useContext } from 'react';
+import { AuthContext } from './context/Auth.js';
+
 function App() {
+
+  const { isLoggedIn, user, dispatch } = useContext(AuthContext);
+
   return (
     <div className="App">
       <h1>User Authentication System</h1>
