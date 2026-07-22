@@ -6,6 +6,8 @@ import Login from './components/Login';
 import Dashboard from './components/Dashboard';
 import Profile from './components/Profile';
 
+import PrivateRoute from './components/PrivateRoute.js';
+
 import { useContext } from 'react';
 import { AuthContext } from './context/Auth.js';
 
@@ -34,8 +36,16 @@ function App() {
 
       <Routes>
         <Route path="/login" element={<Login />} />
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/profile" element={<Profile />} />
+        <Route path="/dashboard" element={
+          <PrivateRoute>
+            <Dashboard />
+          </PrivateRoute>
+        } />
+        <Route path="/profile" element={
+          <PrivateRoute>
+            <Profile />
+          </PrivateRoute>
+        } />
       </Routes>
     </div>
   );
