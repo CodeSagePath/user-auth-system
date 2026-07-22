@@ -11,7 +11,7 @@ import { AuthContext } from './context/Auth.js';
 
 function App() {
 
-  const { isLoggedIn, user, dispatch } = useContext(AuthContext);
+  const { isLoggedIn, user, dispatch, handleLogout } = useContext(AuthContext);
 
   return (
     <div className="App">
@@ -19,10 +19,15 @@ function App() {
 
       <nav>
         <ul>
-          <li><Link to="/login">Login</Link></li>
-          <li><Link to="/Dashboard">Dashboard</Link></li>
-          <li><Link to="/profile">Profile</Link></li>
-          <li><button>Logout</button></li>
+          {isLoggedIn ?
+            <>
+              <li><Link to="/Dashboard">Dashboard</Link></li>
+              <li><Link to="/profile">Profile</Link></li>
+              <li><button onClick={handleLogout}>Logout</button></li>
+            </>
+            : <>
+              <li><Link to="/login">Login</Link></li>
+            </>}
         </ul>
       </nav>
 

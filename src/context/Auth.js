@@ -17,14 +17,19 @@ export function AuthProvider(props) {
 
   const navigate = useNavigate();
 
-  const handleLogin = user => {
-    dispatch({ type: 'LOGIN', payload: user});
-    navigate("/dashboard");
+  const handleLogin = (user) => {
+    dispatch({ type: 'LOGIN', payload: user });
+    navigate('/dashboard');
+  };
+
+  const handleLogout = () => {
+    dispatch({ type: 'LOGOUT' });
+    navigate('/login');
   };
 
   return (
-    <AuthContext value={{ ...state, dispatch, handleLogin }}>
-      { props.children }
+    <AuthContext value={{ ...state, dispatch, handleLogin, handleLogin, handleLogout }}>
+      {props.children}
     </AuthContext>
   );
 }
