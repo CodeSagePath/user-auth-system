@@ -9,6 +9,7 @@ const reducer = (state, action) => {
     }
     default: {
       throw new Error("Invalid action type.");
+      // Return existing state - good practice
     }
   }
 };
